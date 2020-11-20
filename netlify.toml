@@ -25,7 +25,8 @@
 
 # Netlify dev config
 [dev]
-  command = "nuxt" # specify command here
+  framework = "#custom"
+  command = "nuxt"
   port = 8888
   targetPort = 3000
   autoLaunch = false
@@ -46,22 +47,4 @@
 [context.branch-deploy]
 
 [context.branch-deploy.processing]
-  skip_processing = true
-
-[[redirects]]
-  from = "/api/v1/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-  force = true
-
-# [[redirects]]
-#   from = "https://www.example.com/*"
-#   to = "https://example.com/:splat"
-#   status = 301
-#   force = true
-
-# [[redirects]]
-#   from = "https://SITE_URL.netlify.com/*"
-#   to = "https://example.com/:splat"
-#   status = 301
-#   force = true
+  skip_processing = false

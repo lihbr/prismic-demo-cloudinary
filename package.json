@@ -1,24 +1,45 @@
 {
-  "name": "NAME",
-  "version": "0.0.0",
-  "description": "DESCRIPTION",
+  "name": "prismic-demo-cloudinary",
+  "version": "1.0.0",
+  "description": "A demo showcasing usage of integration fields with Cloudinary to create a video library in Prismic",
   "private": true,
-  "author": "lihbr <hello@lihbr.com> (https://lihbr.com)",
-  "license": "SEE LICENSE IN LICENSE",
-  "scripts": {},
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt",
+    "predev:netlify": "shx rm -rf ./.nuxt",
+    "dev:netlify": "netlify dev",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue ."
+  },
   "engines": {
     "node": ">=10.16.3",
     "yarn": ">=1.13.0"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
+      "pre-commit": "yarn lint"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "cloudinary": "1.23.0",
+    "core-js": "3.7.0",
+    "nuxt": "2.14.7"
+  },
   "devDependencies": {
-    "@commitlint/cli": "8.3.5",
-    "@commitlint/config-conventional": "8.3.4",
-    "husky": "4.2.5"
+    "@nuxtjs/eslint-module": "3.0.1",
+    "@nuxtjs/prismic": "1.2.4",
+    "@nuxtjs/tailwindcss": "3.2.0",
+    "babel-eslint": "10.1.0",
+    "dotenv": "8.2.0",
+    "eslint": "7.13.0",
+    "eslint-config-prettier": "6.15.0",
+    "eslint-loader": "4.0.2",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-vue": "7.1.0",
+    "husky": "4.3.0",
+    "prettier": "2.2.0",
+    "shx": "0.3.3"
   }
 }
